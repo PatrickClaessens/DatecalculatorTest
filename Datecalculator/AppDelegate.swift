@@ -20,9 +20,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //statusItem.behavior = .removalAllowed
     }
 
-//    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-//        return true 
-//    }
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }

@@ -884,10 +884,10 @@
                     <connections>
                         <outlet property="differenceInDaysLabel" destination="LEu-f6-r7K" id="16I-pH-izk"/>
                         <outlet property="differenceLabel" destination="dNv-ud-srS" id="5gs-k5-QYN"/>
-                        <outlet property="fromDatePicker" destination="QRy-KJ-RK3" id="fQD-SA-fWc"/>
-                        <outlet property="fromDayLabel" destination="rfJ-Cz-MzL" id="71T-iT-Gbl"/>
-                        <outlet property="toDatePicker" destination="D7x-H1-KrS" id="lR6-8r-xu0"/>
-                        <outlet property="toDayLabel" destination="wCT-x9-Ody" id="N7P-TR-iTl"/>
+                        <outlet property="endDateLabel" destination="wCT-x9-Ody" id="N7P-TR-iTl"/>
+                        <outlet property="endDatePicker" destination="D7x-H1-KrS" id="lR6-8r-xu0"/>
+                        <outlet property="startDatePicker" destination="QRy-KJ-RK3" id="fQD-SA-fWc"/>
+                        <outlet property="startDayLabel" destination="rfJ-Cz-MzL" id="71T-iT-Gbl"/>
                     </connections>
                 </viewController>
                 <customObject id="Tlu-t2-zcU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

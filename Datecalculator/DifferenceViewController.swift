@@ -10,19 +10,12 @@ import Cocoa
 
 class DifferenceViewController: NSViewController {
     
-    @IBOutlet var fromDayLabel: NSTextField!
-    @IBOutlet var fromDatePicker: NSDatePicker!
-    @IBOutlet var toDayLabel: NSTextField!
-    @IBOutlet var toDatePicker: NSDatePicker!
+    @IBOutlet var startDayLabel: NSTextField!
+    @IBOutlet var startDatePicker: NSDatePicker!
+    @IBOutlet var endDateLabel: NSTextField!
+    @IBOutlet var endDatePicker: NSDatePicker!
     @IBOutlet var differenceLabel: NSTextField!
     @IBOutlet var differenceInDaysLabel: NSTextField!
-    
-    var from: Date {
-        return fromDatePicker.dateValue
-    }
-    var to: Date {
-        return toDatePicker.dateValue
-    }
     
     let dateFormatter: DateFormatter = {
         let fd = DateFormatter()
@@ -41,10 +34,9 @@ class DifferenceViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let now = Date()
-        fromDatePicker.dateValue = now
-        toDatePicker.dateValue = now
+        startDatePicker.dateValue = now
+        endDatePicker.dateValue = now
         updateLabels()
-        
     }
     
     @objc func datePickerChanged(_ datePicker: NSDatePicker!) {
@@ -52,21 +44,24 @@ class DifferenceViewController: NSViewController {
     }
     
     func updateLabels() {
-        guard from != to else {
+        // Dees kan beter Claessens 🤨
+        let startDate = startDatePicker.dateValue
+        let endDate = endDatePicker.dateValue
+        
+        guard startDate != endDate else {
             differenceInDaysLabel.isHidden = true
             differenceLabel.stringValue = ""
             return
         }
         
         dateComponentFormatter.allowedUnits = [.year, .month, .day]
-        differenceLabel.stringValue = dateComponentFormatter.string(from: from, to: to)!
+        differenceLabel.stringValue = dateComponentFormatter.string(from: startDate, to: endDate)!
         dateComponentFormatter.allowedUnits = [.day]
-        differenceInDaysLabel.stringValue = dateComponentFormatter.string(from: from, to: to)!
+        differenceInDaysLabel.stringValue = dateComponentFormatter.string(from: startDate, to: endDate)!
         
-
         differenceInDaysLabel.isHidden = differenceInDaysLabel.stringValue == differenceLabel.stringValue
         
-        fromDayLabel.stringValue = dateFormatter.string(from: from)
-        toDayLabel.stringValue = dateFormatter.string(from: to)
+        startDayLabel.stringValue = dateFormatter.string(from: startDate)
+        endDateLabel.stringValue = dateFormatter.string(from: endDate)
     }
 }
