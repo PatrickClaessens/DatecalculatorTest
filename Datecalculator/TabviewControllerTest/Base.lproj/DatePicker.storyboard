@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Els-8N-yeY">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Date Picker-->
+        <scene sceneID="MES-XS-LWo">
+            <objects>
+                <viewController id="Els-8N-yeY" customClass="CustomDatePicker" customModule="TabviewControllerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" id="cVi-yp-yAH">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="55"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fsc-LV-Mrq">
+                                <rect key="frame" x="18" y="18" width="31" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Woe" id="QZj-0b-5kG">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P4F-u9-JIn">
+                                <rect key="frame" x="55" y="15" width="100" height="27"/>
+                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="MOg-ZL-oAk">
+                                    <font key="font" metaFont="system"/>
+                                    <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                                        <!--1982-02-12 16:00:00 +0000-->
+                                    </date>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                </datePickerCell>
+                                <connections>
+                                    <action selector="datePickerChanged:" target="Els-8N-yeY" id="1kR-La-sCO"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="fsc-LV-Mrq" firstAttribute="leading" secondItem="cVi-yp-yAH" secondAttribute="leading" constant="20" id="4mH-yW-rZG"/>
+                            <constraint firstItem="P4F-u9-JIn" firstAttribute="top" secondItem="cVi-yp-yAH" secondAttribute="top" constant="17" id="Anu-2M-hzG"/>
+                            <constraint firstItem="P4F-u9-JIn" firstAttribute="leading" secondItem="cVi-yp-yAH" secondAttribute="leading" constant="55" id="Axw-p0-6y7"/>
+                            <constraint firstItem="fsc-LV-Mrq" firstAttribute="top" secondItem="cVi-yp-yAH" secondAttribute="top" constant="20" id="ThU-w8-EZ7"/>
+                            <constraint firstItem="P4F-u9-JIn" firstAttribute="centerY" secondItem="fsc-LV-Mrq" secondAttribute="centerY" id="xYl-qF-AP1"/>
+                            <constraint firstItem="P4F-u9-JIn" firstAttribute="leading" secondItem="fsc-LV-Mrq" secondAttribute="trailing" constant="8" symbolic="YES" id="xfI-QM-qj1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="P4F-u9-JIn" id="7Yw-i6-yvW"/>
+                        <outlet property="weekdayLabel" destination="fsc-LV-Mrq" id="pAV-bQ-Ghq"/>
+                    </connections>
+                </viewController>
+                <customObject id="JBG-zV-3Po" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="822" y="1604"/>
+        </scene>
+    </scenes>
+</document>
