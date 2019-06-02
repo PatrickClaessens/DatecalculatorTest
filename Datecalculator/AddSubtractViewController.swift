@@ -93,7 +93,6 @@ class AddSubtractViewController: NSViewController, NSTextFieldDelegate {
         dateComponents.month = months * multiplier
         dateComponents.day = days * multiplier
         let newDate = calendar.date(byAdding: dateComponents, to: startDate)
-        newDateTextField.isHidden = false
         return dateFormatter.string(from: newDate ?? Date())
      }
 }
