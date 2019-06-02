@@ -58,9 +58,7 @@ class DifferenceViewController: NSViewController {
         differenceLabel.stringValue = dateComponentFormatter.string(from: startDate, to: endDate)!
         dateComponentFormatter.allowedUnits = [.day]
         differenceInDaysLabel.stringValue = dateComponentFormatter.string(from: startDate, to: endDate)!
-        
         differenceInDaysLabel.isHidden = differenceInDaysLabel.stringValue == differenceLabel.stringValue
-        
         startDayLabel.stringValue = dateFormatter.string(from: startDate)
         endDateLabel.stringValue = dateFormatter.string(from: endDate)
     }
